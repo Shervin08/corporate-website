@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Discover the latest trends and timeless styles at Styles Vault. Explore our curated collection of clothes."/>
+<title>Styles Vault</title>
+</head>
+<body>
+    <style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    </style>
+
+
+    <!-- Header -->
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="index.html"><h1><span>S</span>tyles <span>V</span>ault</h1></a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger"><div class="bar"></div></div>
+                    <ul>
+                        <li><a href="index.html" data-after="Home">Home</a></li>
+                        <li><a href="about us.html" data-after="About us">About us</a></li>
+                        <li class="dropdown" id="collection-dropdown">
+                            <a href="collection.html" data-after="Collection">Collection</a>
+                            <div class="dropdown-content">
+                                <a href="dress.html">Dress</a>
+                                <a href="pants.html">Pants</a>
+                                <a href="shirts.html">Shirts</a>
+                                <a href="blouse.html">Blouse</a>
+                            </div>
+                        </li>
+                        <li><a href="review.html" data-after="Review">Review</a></li>
+                        <li><a href="video section.html" data-after="Our Video">Our Video</a></li>
+                        <li><a href="contact.html" data-after="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Header -->
+
+
+  <!-- Eunwoo Section -->
+<section id="Eunwoo">
+    <div class="Eunwoo container">
+        <div>
+            <h1>Hello,<span></span></h1>
+            <h1>This is our website<span></span></h1>
+            <h1>Styles Vault<span></span></h1>
+        </div>
+    </div>
+    </section>
+    <!-- End Eunwoo Section -->
+
+    <!-- JavaScript -->
+    <script>
+        const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+        const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+        const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+        const header = document.querySelector('.header.container');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobile_menu.classList.toggle('active');
+        });
+
+        document.addEventListener('scroll', () => {
+            var scroll_position = window.scrollY;
+            if(scroll_position > 250) {
+                header.style.backgroundColor = 'rgba(31, 30, 30, 0.24)';
+            } else {
+                header.style.backgroundColor = 'rgba(31, 30, 30, 0.24)';
+            }
+        });
+
+        menu_item.forEach((item) => {
+            item.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobile_menu.classList.toggle('active');
+            });
+        });
+        
+        document.getElementById('collection-dropdown').addEventListener('mouseenter', function() {
+            this.querySelector('.dropdown-content').style.display = 'block';
+        });
+        document.getElementById('collection-dropdown').addEventListener('mouseleave', function() {
+            this.querySelector('.dropdown-content').style.display = 'none';
+        });
+    </script>
+    <!-- End JavaScript -->
+    <script src="./app.js"></script>
+</body>
+</html>
